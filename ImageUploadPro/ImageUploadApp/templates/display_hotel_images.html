@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel Images</title>
+
+    <!-- Bootstrap lines -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
+
+</head>
+<body>
+{% if hotel_images %}
+
+        {% for hotel in hotel_images %}
+            <div class="col-md-4">
+                {{ hotel.name }}
+                <img src="{{ hotel.hotel_Main_Img.url }}" class="img-responsive" style="width: 100%; float:left; margin-right: 10px;">
+
+            </div>
+        {% endfor %}
+{% else%}
+        <center style="font-size: 50px;text-decoration: underline overline; font-family: Algerian;"> No Images 👀👀👀 </center>
+{% endif %}
+        
+</body>
+</html>
